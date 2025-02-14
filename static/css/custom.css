@@ -1,0 +1,130 @@
+/* Custom animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero section animations */
+.hero-content {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Benefit cards animation */
+.benefit-card {
+    animation: slideIn 0.5s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Process timeline styling */
+.process-timeline {
+    position: relative;
+    padding-left: 20px;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: #2563eb;
+}
+
+/* Process step styling */
+.process-timeline .flex {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.process-timeline .flex:last-child {
+    margin-bottom: 0;
+}
+
+.process-timeline .rounded-full {
+    position: relative;
+    z-index: 2;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.process-timeline .ml-4 {
+    margin-left: 1rem;
+    flex-grow: 1;
+}
+
+/* Form styling */
+input:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1d4ed8;
+}
+
+/* Loading state for form submission */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .process-timeline {
+        padding-left: 15px;
+    }
+
+    .process-timeline::before {
+        left: 15px;
+    }
+    .benefit-card {
+        margin-bottom: 1.5rem;
+    }
+}
